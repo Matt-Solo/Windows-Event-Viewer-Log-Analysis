@@ -40,6 +40,7 @@ Sample Event IDs
 | 4723     | Password change attempted        |
 
 
+
 Step 1: Launch Event Viewer:
 Press Windows + R, type eventvwr, and hit Enter.
 <img width="750" height="1125" alt="image" src="https://github.com/user-attachments/assets/986b56a4-35b0-462a-86c8-adfa1726bf79" /> 
