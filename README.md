@@ -1,78 +1,129 @@
-# WINDOWS LOGS
+# 🚨 Windows Event Investigation — Threat Detection & Analysis
 
+## 🎯 Project Overview
 
-This project demonstrates how I used Windows Event Viewer to analyze system, security, and application logs for cybersecurity purposes. Event Viewer is a core tool for any SOC analyst or incident responder, helping detect, investigate, and document system behavior and potential threats.
+This project demonstrates a structured **security investigation using Windows Event Logs** to identify suspicious activity, analyse authentication behaviour, and support incident response workflows.
 
+The objective was to review critical Windows security events, detect potentially malicious patterns, and document findings in a way that reflects real-world **SOC analyst investigation processes**.
 
+---
 
-Project Objective
+## 🧪 Environment
 
-To explore real-world usage of Windows Event Viewer and practice extracting and analyzing logs relevant to cybersecurity, threat detection, and incident response.
+* Platform: Windows Event Viewer
+* Log Sources:
 
+  * Security Logs
+  * System Logs
+  * Application Logs
+* Supporting Telemetry: Sysmon
+* Focus Areas:
 
+  * Authentication monitoring
+  * Privileged activity
+  * Account management events
+  * Security event analysis
 
-Key Steps Performed
+---
 
-1. Opened **Windows Event Viewer** (`Press Windows + R, type eventvwr, and hit Enter, eventvwr.msc`)
-2. Navigated to key logs:
-   - **Windows Logs > Security**
-   - **Windows Logs > System**
-   - **Windows Logs > Application**
-3. Applied filters for important event types such as:
-   - Logon attempts (Event ID `4624`, `4625`)
-   - Privilege escalation (Event ID `4672`)
-   - Account lockouts or changes (Event ID `4720`, `4722`, `4723`)
-4. Took screenshots of relevant logs for documentation.
-5. Exported logs (`.evtx`) for further analysis.
-6. Documented key findings in a Word report.
-   
+## 🔍 Investigation Process
 
+### 1. Log Review
 
-Sample Event IDs
+Reviewed key Windows log categories to identify activity relevant to security monitoring and incident response:
 
-| Event ID | Description                      |
-|----------|----------------------------------|
-| 4624     | Successful logon                 |
-| 4625     | Failed logon attempt             |
-| 4672     | Admin privileges assigned        |
-| 4720     | New user account created         |
-| 4722     | User account enabled             |
-| 4723     | Password change attempted        |
+* Security
+* System
+* Application
 
+---
 
+### 2. Event Filtering
 
-Step 1: Launch Event Viewer:
-Press Windows + R, type eventvwr, and hit Enter.
-<img width="750" height="1125" alt="image" src="https://github.com/user-attachments/assets/986b56a4-35b0-462a-86c8-adfa1726bf79" /> 
+Filtered and analysed events associated with:
 
+* Successful logons (**Event ID 4624**)
+* Failed logons (**Event ID 4625**)
+* Privileged logons (**Event ID 4672**)
+* New account creation (**Event ID 4720**)
+* Account enablement (**Event ID 4722**)
+* Password-related activity (**Event ID 4723**)
 
+---
 
-Step 2: Navigate Log Categories:
-Expand Windows Logs in the left pane: Application, Security, Setup, System, Forwarded Events.
-<img width="1366" height="735" alt="WLs" src="https://github.com/user-attachments/assets/4d2501e4-8928-44e9-9c14-0077569b03c9" /> 
+### 3. Event Analysis
 
+Examined event details including:
 
+* Time of activity
+* User account involved
+* Logon type
+* Privilege use
+* Source host / IP context where available
 
-Step 3: View Security Logs
-Click Security to investigate logon events (Event ID 4624 - Successful Logon, 4625 - Failed Logon), privilege escalation (4672, 4673, 4674), account lockouts (4740), and user group additions (4728, 4732, 4756).
-<img width="1362" height="639" alt="SLs" src="https://github.com/user-attachments/assets/1966194a-21b7-4ed3-ade4-bf4bc38ef35d" /> 
+This helped identify suspicious authentication behaviour and possible indicators of misuse or unauthorized access.
 
+---
 
+### 4. Threat Detection
 
-Step 4: Filter Events
-Use the 'Filter Current Log...' option to filter by Event Level and Event IDs.
-<img width="1351" height="700" alt="FCL" src="https://github.com/user-attachments/assets/09ad0f09-f28c-46d7-9af0-9e986266c0e1" /> 
+Used event patterns to detect:
 
+* Repeated failed authentication attempts
+* Privileged access activity
+* Unusual account lifecycle events
+* Security-relevant changes requiring further investigation
 
+---
 
-Step 5: Analyze Event Details
-Click an event to review Date & Time, Logon Type, Source IP, User Account, and SID.
-<img width="1376" height="654" alt="AED" src="https://github.com/user-attachments/assets/b34e66b3-c0b5-4987-8566-7dc4450b03dd" /> 
+### 5. Documentation
 
+Captured screenshots, exported relevant logs, and documented key findings to support investigation notes and incident reporting.
 
+---
 
+## 📊 Key Findings
 
+* Windows Event Logs provide critical visibility into authentication and account activity
+* Failed logon and privileged access events are high-value indicators during investigations
+* Structured filtering improves efficiency in identifying suspicious events
+* Log review supports escalation decisions and evidence collection
 
+---
 
+## ⚠️ Security Relevance
 
+This investigation highlights how Windows logs can help detect:
 
+* Unauthorized access attempts
+* Potential brute-force activity
+* Suspicious account creation or enablement
+* Misuse of elevated privileges
+
+---
+
+## 🛠️ Skills Demonstrated
+
+* Windows log analysis
+* Security event investigation
+* Threat detection and triage
+* Authentication monitoring
+* Incident documentation
+* Evidence collection for escalation
+
+---
+
+## 📸 Investigation Evidence ( https://github.com/Matt-Solo/Windows-Event-Viewer-Log-Analysis/tree/main ) 
+
+This repository includes screenshots demonstrating:
+
+* Log navigation and filtering
+* Security-relevant event review
+* Event detail analysis
+* Investigation workflow documentation
+
+---
+
+## 🎯 Conclusion
+
+This project demonstrates the ability to use **Windows Event Logs as an investigative data source** for threat detection and security monitoring, reflecting practical SOC analyst responsibilities in log review, analysis, and incident support.
